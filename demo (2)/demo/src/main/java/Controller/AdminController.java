@@ -3,7 +3,7 @@ package Controller;
 import Entity.Administrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import Service.AdminService;
+import Interface.IAdminService;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class AdminController {
 
     @Autowired
-    private AdminService AdminService;
+    private IAdminService AdminService;
 
     @PostMapping("/admin")
     public Administrator saveAdmin(@RequestBody Administrator admin) {

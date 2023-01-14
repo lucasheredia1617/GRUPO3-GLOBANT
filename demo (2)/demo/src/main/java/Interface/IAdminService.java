@@ -1,10 +1,10 @@
-package Service;
+package Interface;
 
 import Entity.Administrator;
 
 import java.util.List;
 
-public interface AdminService {
+public interface IAdminService {
 
     Administrator saveAdmin(Administrator admin);
 
