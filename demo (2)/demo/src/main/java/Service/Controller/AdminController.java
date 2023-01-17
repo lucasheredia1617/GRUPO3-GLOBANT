@@ -1,4 +1,4 @@
-package Controller;
+package Service.Controller;
 
 import Entity.Administrator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +8,7 @@ import Interface.IAdminService;
 import java.util.List;
 
 @RestController
+
 public class AdminController {
 
     @Autowired

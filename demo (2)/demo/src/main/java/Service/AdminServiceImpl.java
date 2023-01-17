@@ -12,6 +12,8 @@ import java.util.List;
 
 
 public class AdminServiceImpl implements IAdminService {
+    Administrator admin = new Administrator(2,"Matias");
+
     @Autowired
     TurnPointRepository repository;
 
@@ -22,7 +24,7 @@ public class AdminServiceImpl implements IAdminService {
 
     @Override
     public List<Administrator> listAdmin() {
-        return null;
+        return listAdmin();
     }
 
     @Override

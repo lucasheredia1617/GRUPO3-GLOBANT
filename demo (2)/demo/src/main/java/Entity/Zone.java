@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Zona {
+public class Zone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -28,10 +28,10 @@ public class Zona {
 
     private String img;
 
-    public Zona() {
+    public Zone() {
     }
 
-    public Zona(String nombre, String direccion, String descripcion, String img) {
+    public Zone(String nombre, String direccion, String descripcion, String img) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.descripcion = descripcion;

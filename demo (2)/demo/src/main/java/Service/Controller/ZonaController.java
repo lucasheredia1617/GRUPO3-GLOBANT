@@ -1,6 +1,6 @@
-package Controller;
+package Service.Controller;
 
-import Entity.Zona;
+import Entity.Zone;
 import Interface.IZonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +14,13 @@ public class ZonaController {
     IZonaService izonaService;
 
     @GetMapping("/traer")
-    public List<Zona> getZona() {
+    public List<Zone> getZona() {
         return izonaService.getZona();
     }
 
     @PostMapping("/crear")
-    public String createZona(@RequestBody Zona zona) {
-        izonaService.saveZona(zona);
+    public String createZona(@RequestBody Zone zone) {
+        izonaService.saveZona(zone);
         return "La zona fue creada correctamente";
     }
 
@@ -32,17 +32,17 @@ public class ZonaController {
 
     //URL:PUERTO/zonas/editar/4/nombre & direccion & descripcion
     @PutMapping("/editar/{id}")
-    public Zona editZona(@PathVariable Long id,
+    public Zone editZona(@PathVariable Long id,
                          @RequestParam("nombre") String nuevoNombre,
                          @RequestParam("direccion") String nuevaDireccion,
                          @RequestParam("descripcion") String nuevaDescripcion) {
-        Zona zona = izonaService.findZona(id);
+        Zone zone = izonaService.findZona(id);
 
-        zona.setNombre(nuevoNombre);
-        zona.setDescripcion(nuevaDescripcion);
-        zona.setDireccion(nuevaDireccion);
+        zone.setNombre(nuevoNombre);
+        zone.setDescripcion(nuevaDescripcion);
+        zone.setDireccion(nuevaDireccion);
 
-        izonaService.saveZona(zona);
-        return zona;
+        izonaService.saveZona(zone);
+        return zone;
     }
 }
